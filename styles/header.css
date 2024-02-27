@@ -1,7 +1,7 @@
 header {
+  background: linear-gradient(315deg, #2966c2, #2865c2, #1e4b8f);
   width: 100%;
   padding: 1.6rem 1.6rem 0;
-  background: linear-gradient(315deg, #2966c2, #2865c2, #1e4b8f);
   color: white;
   position: relative;
   z-index: 1;
@@ -9,35 +9,35 @@ header {
 }
 
 .circle {
-  border-radius: 100%;
   background: #fff2;
+  border-radius: 100%;
   position: absolute;
 }
 
-.circle1 {
+.circle:nth-child(1) {
   height: 12rem;
   width: 12rem;
   bottom: -10%;
   right: 11rem;
 }
 
-.circle2 {
+.circle:nth-child(2) {
   height: 26rem;
   width: 26rem;
-  bottom: -3%;
+  bottom: -3rem;
   right: -8rem;
 }
 
-.whee1Icon img {
+.wheelIcon img {
   width: 90rem;
-  height: 90;
+  height: 90rem;
   filter: invert(100%) blur(10px);
   opacity: 0.05;
+  animation: rotate 15s linear infinite;
   position: absolute;
   bottom: -3rem;
   right: -10rem;
   z-index: -1;
-  animation: rotate 15s linear infinite;
 }
 
 .boxMenu {
@@ -45,26 +45,32 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #fff4;
+  animation: slideTopDown 1s;
+  position: sticky;
+  top: 0;
 }
 
-.ImageLogo {
-  width: 4.2rem;
+.imageLogo {
+  width: 4.8rem;
+}
+
+.imageLogo img {
+  width: 100%;
 }
 
 nav ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.4rem;
+  justify-content: center;
 }
 
 nav a {
   color: white;
   font-size: clamp(0.9rem, 2.5vw, 2rem);
+  white-space: nowrap;
   text-shadow: 1px 1px 2px #0002;
   padding: 0.8rem;
   border-radius: 0.8rem;
-  white-space: nowrap;
 }
 
 nav a:hover {
@@ -89,10 +95,10 @@ nav a:hover {
 .boxSlogan h1 {
   font-size: 2rem;
   font-weight: 500;
-  text-shadow: 1px 1px 2px solid #0002;
+  text-shadow: 1px 1px 2px #0002;
+  animation: typing 3s 1s steps(25) both;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 3s 1s steps(25) both;
 }
 
 .boxSlogan p {
@@ -102,23 +108,17 @@ nav a:hover {
 }
 
 .boxSlogan button {
+  background: linear-gradient(#ffc44f, #cc9d3f);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
   padding: 0.6rem;
   border-radius: 1.2rem;
   width: 10rem;
-  background: linear-gradient(#ffc44f, #cc9d3f);
-  color: white;
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 2px #0004;
+  text-shadow: 1px 1px 1px #0004;
   box-shadow: 1px 1px 2px #0002;
   transition: filter 200ms, scale 200ms;
-  animation: pulse 1s 3.7s;
-}
-
-.boxImageSaleswoman img {
-  width: 14rem;
-  position: relative;
-  z-index: 1;
+  animation: pulse 1s 3.6s;
 }
 
 .boxSlogan button:hover {
@@ -127,89 +127,98 @@ nav a:hover {
   scale: 1.01;
 }
 
+.boxImageSaleswoman img {
+  width: 14rem;
+  position: relative;
+  z-index: 1;
+  animation: slideRightLeft 1s;
+}
+
 @media (min-width: 768px) {
   header {
     padding: 2.4rem 2.4rem 0;
   }
 
-  .circle1 {
+  .circle:nth-child(1) {
     height: 18rem;
     width: 18rem;
     bottom: -15%;
     right: 15rem;
   }
+
+  .circle:nth-child(2) {
+    height: 34rem;
+    width: 34rem;
+    bottom: -5rem;
+    right: -10rem;
+  }
+
+  .wheelIcon img {
+    width: 140rem;
+    height: 140rem;
+    animation: rotate 17s linear infinite;
+    bottom: -3rem;
+    right: -8rem;
+  }
+
+  .boxMenu {
+    border-bottom: 1.25px solid #fff4;
+  }
+
+  .imageLogo {
+    width: 6.4rem;
+  }
+
+  nav ul {
+    gap: 1.6rem;
+  }
+
+  .containerSlogan {
+    margin-top: 1.6rem;
+  }
+
+  .boxSlogan {
+    max-width: 48rem;
+    gap: 2rem;
+  }
+
+  .boxSlogan h1 {
+    font-size: 2.4rem;
+    animation: typing 4s 1s steps(35) both;
+  }
+
+  .boxSlogan p {
+    font-size: 1.6rem;
+  }
+
+  .boxSlogan button {
+    padding: 0.8rem;
+    width: 14rem;
+    font-size: 1.6rem;
+    animation: pulse 1s 3.1s;
+  }
+
+  .boxImageSaleswoman img {
+    width: 18rem;
+  }
 }
 
-.circle2 {
-  height: 34rem;
-  width: 34rem;
-  bottom: -5rem;
-  right: -10rem;
-}
-
-.whee1Icon img {
-  width: 140rem;
-  height: 140rem;
-  animation: rotate 17s linear infinite;
-  bottom: -3rem;
-  right: -8rem;
-  
-}
-
-.ImageLogo {
-  width: 6.4rem;
-}
-
-nav ul {
-  gap: 1.6rem;
-}
-
-.containerSlogan {
-  margin-top: 1.6rem;
-}
-
-.boxSlogan {
-  max-width: 48rem;
-  gap: 2rem;
-}
-
-.boxSlogan h1 {
-  font-size: 2.4rem;
-  animation: typing 4s 1s steps(35) both;
-  gap: 2rem;
-}
-
-.boxSlogan p {
-  font-size: 1.6rem;
-}
-
-.boxSlogan button {
-  font-size: 1.6rem;
-  padding: 0.8rem;
-  width: 14rem;
-  animation: pulse 1s 3.1s;
-}
-
-.boxImageSaleswoman img {
-  width: 18rem;
-}
-
-@media (max-width: 1024px) {
-  .circle1 {
+@media (min-width: 1024px) {
+  .circle:nth-child(1) {
     height: 24rem;
     width: 24rem;
     bottom: -20%;
     right: 25rem;
   }
 
-  .circle2 {
+  .circle:nth-child(2) {
     height: 48rem;
     width: 48rem;
     bottom: -10rem;
     right: -10rem;
   }
 
-  .whee1Icon img {
+  .wheelIcon img {
     width: 190rem;
     height: 190rem;
     animation: rotate 20s linear infinite;
@@ -221,11 +230,11 @@ nav ul {
     border-bottom: 1.5px solid #fff4;
   }
 
-  .ImageLogo {
+  .imageLogo {
     width: 8.2rem;
   }
 
-  .nav ul {
+  nav ul {
     gap: 2rem;
   }
 
@@ -256,6 +265,5 @@ nav ul {
 
   .boxImageSaleswoman img {
     width: 24rem;
-
   }
 }
